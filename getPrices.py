@@ -10,6 +10,11 @@ from collections import deque
 
 # print(sys.path)
 
+## Todos
+# heart beat every 24 hours
+# intervals in config.ini
+# price difference in percent in config.ini
+
 logging.basicConfig()
 
 #listPrices = collections.deque(maxlen=5)
@@ -52,6 +57,9 @@ def evalPrices():
 		print "New max price: ", currentPrice, " Old max Price: ", oldMaxPrice
 		push = pb.push_note("New max price", "{:.2f}".format(currentPrice)) 
 		oldMaxPrice = currentPrice
+
+	oldMinPrice = min(listPrices)
+	oldMaxPrice = max(listPrices)
 
 	# print "---- End Eval prices ----"
 
